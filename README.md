@@ -32,13 +32,25 @@ Mininet (Hosts + Switches) → OpenFlow Switch → Ryu Controller → Flow Analy
 ### 1. Install Mininet
     sudo apt update
     sudo apt install mininet -y
-### 2.Create Virtual Environment (Python 3.8 recommended)
+### 2. Create Virtual Environment (Python 3.8 recommended)
     python3.8 -m venv ryu-env38
     source ryu-env38/bin/activate
-### 3.Install Dependencies
+### 3. Install Dependencies
     pip install "pip<23"
     pip install "setuptools<58"
     pip install wheel
     pip install eventlet==0.30.2
     pip install ryu
 
+
+## How To Run
+
+### 1. Run Ryu Controller
+    ryu-manager flow_analyzer.py
+### 2. Start Mininet
+    sudo mn --topo single,3 --controller remote
+### 3. Generate Traffic
+    pingall
+
+
+## Result 
